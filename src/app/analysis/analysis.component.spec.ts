@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PromptLibComponent } from './prompt-lib.component';
+import { AnalysisComponent } from './analysis.component';
 
-describe('PromptLibraryComponent', () => {
-  let component: PromptLibComponent;
-  let fixture: ComponentFixture<PromptLibComponent>;
+describe('AnalysisComponent', () => {
+  let component: AnalysisComponent;
+  let fixture: ComponentFixture<AnalysisComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PromptLibComponent ]
+      declarations: [ AnalysisComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PromptLibComponent);
+    fixture = TestBed.createComponent(AnalysisComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

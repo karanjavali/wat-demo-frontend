@@ -3,9 +3,25 @@
     <mat-icon class = "right-float"> account_circle</mat-icon>
 </mat-toolbar>
 
-<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
+<!-- <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
     <mat-tab label="My Classes">Classes</mat-tab>
     <mat-tab label="Create An Assignment">Assignment creation content</mat-tab>
     <mat-tab label="Analysis">Analysis Content</mat-tab>
     <mat-tab label="Resource Library"><div class="container"><app-resource-lib></app-resource-lib></div></mat-tab>
-  </mat-tab-group>
+  </mat-tab-group> -->
+<mat-toolbar>
+
+<span class="toolbar-flex"></span>
+  <nav mat-tab-nav-bar #tabPanel>
+    <a mat-tab-link 
+    *ngFor="let link of navLinks"
+    [routerLink]="link.link"
+    routerLinkActive #rla="routerLinkActive"
+    [active]="rla.isActive">
+     {{link.label}}
+    </a>
+    </nav>
+<span class="toolbar-flex"></span>
+
+</mat-toolbar>
+<router-outlet></router-outlet>

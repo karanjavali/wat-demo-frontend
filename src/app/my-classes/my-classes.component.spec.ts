@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PromptLibComponent } from './prompt-lib.component';
+import { MyClassesComponent } from './my-classes.component';
 
-describe('PromptLibraryComponent', () => {
-  let component: PromptLibComponent;
-  let fixture: ComponentFixture<PromptLibComponent>;
+describe('MyClassesComponent', () => {
+  let component: MyClassesComponent;
+  let fixture: ComponentFixture<MyClassesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PromptLibComponent ]
+      declarations: [ MyClassesComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PromptLibComponent);
+    fixture = TestBed.createComponent(MyClassesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

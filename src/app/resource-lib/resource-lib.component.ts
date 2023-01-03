@@ -6,5 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./resource-lib.component.scss']
 })
 export class ResourceLibComponent {
-
+  navLinks = [
+    {
+      link: "metric-lib",
+      label: "Metric Library"
+    },
+    {
+      link: "prompt-lib",
+      label: "Prompt Library"
+    },
+    {
+      link: "rubrics",
+      label: "Rubrics"
+    },
+    {
+      link: "mentor-texts",
+      label: "Mentor Texts"
+    }
+  ]
 }

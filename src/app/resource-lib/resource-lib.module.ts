@@ -4,24 +4,26 @@ import { ResourceLibComponent } from './resource-lib.component';
 import { MaterialModule } from '../material/material';
 import { MentorTextsComponent } from './mentor-texts/mentor-texts.component';
 import { RubricsComponent } from './rubrics/rubrics.component';
-import { PromptLibraryComponent } from './prompt-lib/prompt-lib.component';
+import { PromptLibComponent } from './prompt-lib/prompt-lib.component';
 import { MetricLibComponent } from './metric-lib/metric-lib.component';
+import { ResourceLibRouting } from './resource-lib-routing';
 
 @NgModule({
   declarations: [
     ResourceLibComponent,
     MentorTextsComponent,
     RubricsComponent,
-    PromptLibraryComponent,
+    PromptLibComponent,
     MetricLibComponent
   ],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    ResourceLibRouting
   ],
-  exports : [
-    ResourceLibComponent
-  ]
+  // exports : [
+  //   ResourceLibComponent
+  // ]
 })
 
 export class ResourceLibModule { }

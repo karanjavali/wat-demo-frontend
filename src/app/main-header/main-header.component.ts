@@ -7,4 +7,22 @@ import { Component } from '@angular/core';
 })
 export class MainHeaderComponent {
 
+  navLinks = [
+    {
+      link: "my-classes",
+      label: "My Classes"
+    },
+    {
+      link: "create-assignment",
+      label: "Create an Assignment"
+    },
+    {
+      link: "analysis",
+      label: "Analysis"
+    },
+    {
+      link: "resource-lib",
+      label: "Resource Library"
+    }
+  ]
 }

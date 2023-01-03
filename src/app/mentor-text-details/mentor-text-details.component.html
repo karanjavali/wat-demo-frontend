@@ -1,0 +1,56 @@
+<h2 mat-dialog-title>Add Mentor Text</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup] = "mentorText" (ngSubmit) = "onSubmit()">
+    
+    <label>Skill :- </label>
+    <mat-form-field appearance="fill">
+      <mat-label>Skill</mat-label>
+      <input matInput formControlName="skill" required>
+      <!-- <mat-error *ngIf="email.invalid">error message</mat-error> -->
+    </mat-form-field>
+    <br>
+
+    <label>Category :- </label>
+    <mat-radio-group formControlName="category" aria-label="Select a category" required>
+      <mat-radio-button [checked]="checked" value="Persuasive">Persuasive</mat-radio-button>
+      <mat-radio-button [checked]="!checked" value="Summary">Summary</mat-radio-button>
+    </mat-radio-group>
+    <br>
+
+    <label>Title :- </label>
+    <mat-form-field appearance="fill">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title" required>
+      <!-- <mat-error *ngIf="email.invalid">error message</mat-error> -->
+    </mat-form-field>
+    <br>
+
+    <label>Description :- </label>
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description" required></textarea>
+      <!-- <mat-error *ngIf="email.invalid">error message</mat-error> -->
+    </mat-form-field>
+    <br>
+
+    <label>Created On :- </label>
+    <mat-form-field appearance="fill">
+      <mat-label>Created On</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="created_on">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-dialog-actions align="end">
+
+ 
+      <button  [disabled] = "!mentorText.valid" mat-raised-button type="submit" color="primary">Submit</button>
+
+      <button mat-raised-button mat-dialog-close>Cancel</button>
+      <!-- <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button> -->
+    </mat-dialog-actions>
+    
+
+  </form>
+</mat-dialog-content>
