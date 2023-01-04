@@ -1,4 +1,4 @@
-<h2 mat-dialog-title>Add Mentor Text</h2>
+<h2 mat-dialog-title>{{data.type}} Mentor Text</h2>
 <mat-dialog-content class="mat-typography">
   <form [formGroup] = "mentorText" (ngSubmit) = "onSubmit()">
     
@@ -12,8 +12,8 @@
 
     <label>Category :- </label>
     <mat-radio-group formControlName="category" aria-label="Select a category" required>
-      <mat-radio-button [checked]="checked" value="Persuasive">Persuasive</mat-radio-button>
-      <mat-radio-button [checked]="!checked" value="Summary">Summary</mat-radio-button>
+      <mat-radio-button [checked]="checkedPersuasive" value="Persuasive">Persuasive</mat-radio-button>
+      <mat-radio-button [checked]="!checkedPersuasive" value="Summary">Summary</mat-radio-button>
     </mat-radio-group>
     <br>
 

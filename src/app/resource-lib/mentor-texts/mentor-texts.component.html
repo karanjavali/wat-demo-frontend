@@ -2,7 +2,21 @@
 <table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8">
   <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> {{column}} </th>
-    <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+    <td mat-cell *matCellDef="let element;let i = index"> 
+      
+      <span *ngIf = "column!='edit' && column!='delete' && column!='created_on'"> {{element[column]}} </span>
+      <span *ngIf = "column=='created_on'"> {{ element[column] | date:'shortDate' }} </span>
+      <span *ngIf = "column == 'edit'"> 
+        <button mat-icon-button (click)="editRow(i)">
+          <mat-icon>edit</mat-icon>
+        </button> 
+      </span>
+      <span *ngIf = "column == 'delete'">
+        <button mat-icon-button (click)="deleteRow(i)">
+          <mat-icon>delete</mat-icon>
+        </button> 
+      </span>
+    </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>

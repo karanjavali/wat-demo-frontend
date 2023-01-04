@@ -41,18 +41,37 @@ export class MentorTextsComponent {
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
-    console.log(this.columnsToDisplay);
   }
 
-  displayedColumns: string[] = ['skill', 'category', 'title', 'description', 'created_on'];
+  displayedColumns: string[] = ['skill', 'category', 'title', 'description', 'created_on', 'edit', 'delete'];
 
   columnsToDisplay: string[] = this.displayedColumns;
 
-  openAddForm() {
-    console.log("button clicked!");
+  deleteRow(row:number) {
+    this.dummyData.splice(row,1);
+    this.dataSource = new MatTableDataSource(this.dummyData);
+  }
+  
+  editRow(row:number) {
     const dialogRef = this.dialog.open(MentorTextDetailsComponent, {
       data: {
-        dummy:"data"
+        type:"Edit",
+        rowData:this.dummyData[row]
+      }
+    });
+    dialogRef.afterClosed().subscribe(res => {
+      if(res!="") {
+        this.dummyData[row] = res;
+        this.dataSource = new MatTableDataSource(this.dummyData);
+      }
+    })
+  }
+
+  openAddForm() {
+    const dialogRef = this.dialog.open(MentorTextDetailsComponent, {
+      data: {
+        type:"Add",
+        rowData:{skill:"", category:"", title:"", description:"", created_on:""}
       }
     });
     dialogRef.afterClosed().subscribe(res => {

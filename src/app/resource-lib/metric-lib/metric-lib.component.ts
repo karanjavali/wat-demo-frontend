@@ -31,7 +31,6 @@ export class MetricLibComponent {
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
-    console.log(this.columnsToDisplay);
   }
 
   columnsToDisplay: string[] = this.displayedColumns;

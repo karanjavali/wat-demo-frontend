@@ -8,11 +8,6 @@ import { ResourceLibModule } from './resource-lib/resource-lib.module';
 
 const routes: Routes = [
   {
-    path: 'resource-lib',
-    component: ResourceLibComponent,
-    loadChildren: () => ResourceLibModule
-  },
-  {
     path: 'analysis',
     component: AnalysisComponent
   },
@@ -23,6 +18,11 @@ const routes: Routes = [
   {
     path: 'my-classes',
     component: MyClassesComponent
+  },
+  {
+    path: 'resource-lib',
+    component: ResourceLibComponent,
+    loadChildren: () => ResourceLibModule
   },
   {
     path: '**',

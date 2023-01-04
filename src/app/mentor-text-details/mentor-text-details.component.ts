@@ -11,21 +11,26 @@ export class MentorTextDetailsComponent {
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, private formBuilder: FormBuilder, public matDialogRef: MatDialogRef<MentorTextDetailsComponent>
   ) {}
 
-  checked = true;
+  checkedPersuasive = true;
   ngOnInit() {
-    console.log(this.data);
+    this.mentorText.setValue({skill:this.data.rowData.skill, category:this.data.rowData.category, title:this.data.rowData.title, description:this.data.rowData.description, created_on:this.data.rowData.created_on})
+    if(this.data.rowData.category == "Persuasive") {
+      this.checkedPersuasive = true;
+    }
+    else {
+      this.checkedPersuasive = false;
+    }
   }
   // ['skill', 'category', 'title', 'description', 'created_on'];
   mentorText = new FormGroup({
     skill: new FormControl('', [Validators.required]),
-    category: new FormControl('Persuasive', [Validators.required]),
+    category: new FormControl('Persuasive'),
     title: new FormControl('', [Validators.required]),
     description: new FormControl('', [Validators.required]),
     created_on: new FormControl('', [Validators.required])
   })
 
   onSubmit(): void {
-    console.log(this.mentorText);
     this.matDialogRef.close(this.mentorText.value);
   }
 }
