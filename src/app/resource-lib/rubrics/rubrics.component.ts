@@ -16,7 +16,18 @@ export class RubricsComponent {
   @ViewChild(MatSort) sort: MatSort | undefined;
   dataSource: any;
   data: any;
-  constructor(public api: ApiService) { }
+  columnHeaders: any;
+  constructor(public api: ApiService) { 
+    this.columnHeaders = {
+      'skill': 'Skill',
+      'description': 'Description',
+      'edit': 'Edit Column',
+      'delete': 'Delete Column',
+      'title': 'Title',
+      'category': 'Category',
+      'created_on': 'Created On'
+    }
+  }
 
   displayedColumns: string[] = ['category', 'title', 'description'];
   

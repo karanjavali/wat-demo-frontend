@@ -2,33 +2,36 @@
 <mat-dialog-content class="mat-typography">
   <form [formGroup] = "mentorText" (ngSubmit) = "onSubmit()">
     
-    <label>Skill :- </label>
+    <label><b>Skill</b> :- </label>
     <!-- <mat-form-field appearance="fill">
       <mat-label>Skill</mat-label>
       <input matInput formControlName="skill" required>
     </mat-form-field> -->
     <div formGroupName = "skill">
+      <label>Skill Title :- </label>
       <mat-form-field appearance="fill">
-        <mat-label>Title</mat-label>
+        <mat-label>Skill Title</mat-label>
         <input matInput formControlName="title" required>
         <!-- <mat-error *ngIf="email.invalid">error message</mat-error> -->
       </mat-form-field>
+      <br>
+      <label>Skill Description :- </label>
       <mat-form-field appearance="fill">
-        <mat-label>Description</mat-label>
+        <mat-label>Skill Description</mat-label>
         <input matInput formControlName="description" required>
         <!-- <mat-error *ngIf="email.invalid">error message</mat-error> -->
       </mat-form-field>
     </div>
     <br>
 
-    <label>Category :- </label>
+    <label><b>Category </b>:- </label>
     <mat-radio-group formControlName="category" aria-label="Select a category" required>
       <mat-radio-button [checked]="checkedPersuasive" value="Persuasive">Persuasive</mat-radio-button>
       <mat-radio-button [checked]="!checkedPersuasive" value="Summary">Summary</mat-radio-button>
     </mat-radio-group>
     <br>
 
-    <label>Title :- </label>
+    <label><b>Title </b>:- </label>
     <mat-form-field appearance="fill">
       <mat-label>Title</mat-label>
       <input matInput formControlName="title" required>
@@ -36,7 +39,7 @@
     </mat-form-field>
     <br>
 
-    <label>Description :- </label>
+    <label><b>Description</b> :- </label>
     <mat-form-field appearance="fill">
       <mat-label>Description</mat-label>
       <textarea matInput formControlName="description" required></textarea>
@@ -44,7 +47,7 @@
     </mat-form-field>
     <br>
 
-    <label>Created On :- </label>
+    <label><b>Created On</b> :- </label>
     <mat-form-field appearance="fill">
       <mat-label>Created On</mat-label>
       <input matInput [matDatepicker]="picker" formControlName="created_on">

@@ -20,8 +20,20 @@ export class MentorTextsComponent {
   
   dataSource: any;
   data:any
+
+  columnHeaders:any;
   
-  constructor(public dialog: MatDialog, public api: ApiService) {}
+  constructor(public dialog: MatDialog, public api: ApiService) {
+    this.columnHeaders = {
+      'skill': 'Skill',
+      'description': 'Description',
+      'edit': 'Edit Column',
+      'delete': 'Delete Column',
+      'title': 'Title',
+      'category': 'Category',
+      'created_on': 'Created On'
+    }
+  }
 
   ngOnInit() {
     const url = environment.urls.fetchRecords + "/mentor_text";

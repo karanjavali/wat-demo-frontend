@@ -1,4 +1,4 @@
-<mat-toolbar class="header-class">
+<mat-toolbar color = "primary">
     <span>WAT Mini</span>
     <mat-icon class = "right-float"> account_circle</mat-icon>
 </mat-toolbar>
@@ -9,11 +9,11 @@
     <mat-tab label="Analysis">Analysis Content</mat-tab>
     <mat-tab label="Resource Library"><div class="container"><app-resource-lib></app-resource-lib></div></mat-tab>
   </mat-tab-group> -->
-<mat-toolbar>
+<mat-toolbar class="white">
 
 <span class="toolbar-flex"></span>
-  <nav mat-tab-nav-bar #tabPanel>
-    <a mat-tab-link 
+  <nav mat-tab-nav-bar #tabPanel class="white">
+    <a mat-tab-link class="tab-class"
     *ngFor="let link of navLinks"
     [routerLink]="link.link"
     routerLinkActive #rla="routerLinkActive"

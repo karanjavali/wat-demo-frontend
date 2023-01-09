@@ -18,8 +18,19 @@ export class PromptLibComponent {
   dataSource: any;
   data: any;
   displayedColumns: string[] = ['category', 'title', 'description'];
-  
-  constructor(public api: ApiService) {}
+  columnHeaders: any;
+
+  constructor(public api: ApiService) {
+    this.columnHeaders = {
+      'skill': 'Skill',
+      'description': 'Description',
+      'edit': 'Edit Column',
+      'delete': 'Delete Column',
+      'title': 'Title',
+      'category': 'Category',
+      'created_on': 'Created On'
+    }
+  }
 
   ngOnInit() {
     const url = environment.urls.fetchRecords + "/prompt";

@@ -10,4 +10,20 @@
 .toolbar-flex {
     align-items: center;
     flex: 1 0.5 auto;
-  }
+}
+
+.colored {
+background-color: white;
+}
+
+.white {
+background-color: white;
+}
+
+.tab-class {
+    color: #6184af;
+}
+
+.mat-tab-label.mat-tab-label-active {
+    color: #6184af;
+}

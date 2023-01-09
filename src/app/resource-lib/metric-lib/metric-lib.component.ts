@@ -18,9 +18,20 @@ export class MetricLibComponent {
   
   dataSource: any;
   displayedColumns: string[] = ['category', 'title', 'description'];
-  data:any;
+  data: any;
+  columnHeaders: any;
 
-  constructor(public api: ApiService) { }
+  constructor(public api: ApiService) {
+    this.columnHeaders = {
+      'skill': 'Skill',
+      'description': 'Description',
+      'edit': 'Edit Column',
+      'delete': 'Delete Column',
+      'title': 'Title',
+      'category': 'Category',
+      'created_on': 'Created On'
+    }
+   }
   
   
   ngOnInit() {

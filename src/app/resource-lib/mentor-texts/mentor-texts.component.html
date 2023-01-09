@@ -1,7 +1,7 @@
 
 <table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8">
   <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{column}} </th>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{columnHeaders[column]}} </th>
     <td mat-cell *matCellDef="let element;let i = index"> 
       
       <span *ngIf = "column!='edit' && column!='delete' && column!='created_on' && column!='skill'"> {{element[column]}} </span>
@@ -12,7 +12,7 @@
         </button> 
       </span>
       <span *ngIf = "column == 'skill'">
-        <button mat-button color = "warn" (click) = "viewSkill(i)">
+        <button mat-raised-button color = "primary" (click) = "viewSkill(i)">
           View Skill
         </button> 
       </span>
