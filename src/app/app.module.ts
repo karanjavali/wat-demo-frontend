@@ -12,6 +12,10 @@ import { AnalysisComponent } from './analysis/analysis.component';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 import { MentorTextDetailsComponent } from './mentor-text-details/mentor-text-details.component';
 import { ReactiveFormsModule   } from '@angular/forms';
+import { ApiService } from './services/api-service/api.service';
+import { HttpClientModule } from '@angular/common/http';
+import { ViewSkillsComponent } from './view-skills/view-skills.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +25,7 @@ import { ReactiveFormsModule   } from '@angular/forms';
     AnalysisComponent,
     ConfirmationDialogComponent,
     MentorTextDetailsComponent,
+    ViewSkillsComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,9 +33,11 @@ import { ReactiveFormsModule   } from '@angular/forms';
     BrowserAnimationsModule,
     MaterialModule,
     ResourceLibModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

@@ -2,37 +2,38 @@ import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-
-const dummyData = [
-  {category:"News", title:"Mari Speaks", description:"abcde"},
-  {category:"News", title:"The Lowdown", description:"abcde"}
-]
-
+import { ApiService } from 'src/app/services/api-service/api.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-metric-lib',
   templateUrl: './metric-lib.component.html',
   styleUrls: ['./metric-lib.component.scss']
 })
-export class MetricLibComponent {
 
-  
-  
-  
+export class MetricLibComponent {
 
   @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
   @ViewChild(MatSort) sort: MatSort | undefined;
+  
   dataSource: any;
-
-  constructor() {
-    this.dataSource = new MatTableDataSource(dummyData);
-  }
   displayedColumns: string[] = ['category', 'title', 'description'];
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-  }
+  data:any;
 
+  constructor(public api: ApiService) { }
+  
+  
+  ngOnInit() {
+    const url = environment.urls.fetchRecords + "/metric";
+    this.api.get(url).subscribe((res:any) => {
+      console.log(res);
+      this.data = res;
+      this.dataSource = new MatTableDataSource(this.data);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    })
+  }
+  
   columnsToDisplay: string[] = this.displayedColumns;
 
 }
